@@ -35,6 +35,10 @@ app.use(cors());
 app.use(xss());
 
 // routes
+app.get("/", (req, res) => {
+  res.send("Jobs API");
+});
+
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/jobs", authMiddleware, jobs);
 
